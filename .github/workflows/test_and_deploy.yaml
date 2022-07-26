@@ -7,16 +7,31 @@ on:
 
 permissions:
   contents: write
+
 jobs:
+
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install
+      run:
+        npm i
+    - name: Test
+      run:
+        npm test
+
   build-and-deploy:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
       - name: Install and Build
         run: |
-          npm ci
+          npm i
           npm run build
 
       - name: Deploy 🚀
