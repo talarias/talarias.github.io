@@ -1,9 +1,9 @@
-name: Build and Deploy - test
+name: Build and Deploy
 
 on:
   push:
-    branches:
-      - master
+    branches-ignore:
+      - gh-pages
 
 permissions:
   contents: write
@@ -25,6 +25,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     needs: build
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
