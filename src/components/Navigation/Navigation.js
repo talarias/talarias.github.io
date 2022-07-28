@@ -32,7 +32,10 @@ function Navigation() {
         </Container>
       </Navbar>
 
-      <Offcanvas show={show} onHide={toggleShow} {...options} style={{}}>
+      <Offcanvas show={show} onHide={toggleShow} {...options} backdrop={true}>
+        <Offcanvas.Header closeButton={false}>
+          <Offcanvas.Title>Menu</Offcanvas.Title>
+        </Offcanvas.Header>
         <Offcanvas.Body>
           <Menu></Menu>
         </Offcanvas.Body>
