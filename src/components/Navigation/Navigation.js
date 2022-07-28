@@ -18,15 +18,21 @@ function Navigation() {
 
   return (
     <>
-      <Navbar bg="light">
+      <Navbar bg="dark">
         <Container>
-          <Navbar.Brand href="#home">Brand link</Navbar.Brand>
+          <Navbar.Brand href="#" style={{color: 'white', display: 'flex'}}>
+            <img src={'https://avatars.githubusercontent.com/u/53948891?v=4'} alt={'logo'} style={{width: '40px', height: '40px', borderRadius: '100%'}} ></img>
+            <div style={{display: 'inline-block'}}>
+              <p className='nav-brand-title' style={{margin: '0px 7px'}} >Max Mustermann</p>
+              <p className='nav-brand-subtitle' style={{fontSize: '15px', fontStyle: 'italic', color: '#56b5e9', margin: 0}} >githubname</p>
+            </div>
+          </Navbar.Brand>
           <BurgerMenuToggler start={show} toggleFunc={toggleShow} isState={show}>
           </BurgerMenuToggler>
         </Container>
       </Navbar>
 
-      <Offcanvas show={show} onHide={toggleShow} {...options} style={{top: 61}}>
+      <Offcanvas show={show} onHide={toggleShow} {...options} style={{}}>
         <Offcanvas.Body>
           <Menu></Menu>
         </Offcanvas.Body>
