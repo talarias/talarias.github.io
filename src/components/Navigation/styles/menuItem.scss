@@ -1,4 +1,15 @@
 .menu-item {
+    margin-bottom: 7px;
+    border-bottom: 1px solid #284a7e;
+
+    &:hover {
+        border-bottom: 1px solid #56b5e9;
+
+        a {
+            color: #56b5e9;
+        }
+    }
+
     a {
         display: flex;
         width: 100%;
@@ -8,10 +19,6 @@
 
         text-decoration: none;
         color: black;
-
-        &:hover {
-            color: #284a7e;
-        }
 
         img {
             width: 36px;

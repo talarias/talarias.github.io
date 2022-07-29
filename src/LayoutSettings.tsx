@@ -25,7 +25,7 @@ const MenuItems:any = [
     logoAlt={''}
   />,
   <MenuItem
-    key={1}
+    key={2}
     title={'Title'}
     url={''}
     logo={'https://avatars.githubusercontent.com/u/53948891?v=4'}
