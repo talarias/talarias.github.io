@@ -1,0 +1,24 @@
+.home-wrapper {
+    background-image: url(https://www.w3schools.com/howto/img_parallax.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .home-head {
+        .home-title {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5019607843);
+            color: white;
+        }
+    }
+    .black {
+        background: rgba(0, 0, 0, 0.5019607843);
+        color: white;
+    }
+}

@@ -19,16 +19,23 @@ const menuFooterItems:any = [
 const MenuItems:any = [
   <MenuItem
     key={1}
-    title={'Über mich'}
-    url={''}
+    title={'Home'}
+    url={'/'}
     logo={false}
     logoAlt={''}
   />,
   <MenuItem
     key={2}
-    title={'Title'}
-    url={''}
-    logo={'https://avatars.githubusercontent.com/u/53948891?v=4'}
+    title={'Contact'}
+    url={'/Contact'}
+    logo={''}
+    logoAlt={''}
+  />,
+  <MenuItem
+    key={2}
+    title={'Portfolio'}
+    url={'/Portfolio'}
+    logo={''}
     logoAlt={''}
   />
 ]
