@@ -51,12 +51,12 @@
             &::before {
                 top: -14px;
 
-                transition-property: top, transform;
+                transition-property: top, transform, -webkit-transform;
             }
             &::after {
                 bottom: -14px;
 
-                transition-property: bottom, transform;
+                transition-property: bottom, transform, -webkit-transform;
             }
         }
         &.is-active {
@@ -70,10 +70,12 @@
                 &::before {
                     top: 0;
                     transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
                 }
                 &::after {
                     bottom: 0;
                     transform: rotate(-45deg);
+                    -webkit-transform: rotate(-45deg);
                 }
             }
         }
