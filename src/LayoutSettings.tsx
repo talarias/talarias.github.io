@@ -1,6 +1,7 @@
 import React from 'react'
 
 import FooterItem from './components/Navigation/FooterItem'
+import MenuItem from './components/Navigation/MenuItem'
 
 import { SiteSettings } from './SiteSettings'
 
@@ -12,10 +13,24 @@ const menuFooterItems:any = [
       url = {SiteSettings.githubUrl}
       logo = {'/github.png'}
       logoAlt = {'GitHub-logo'}
-    ></FooterItem>
+    />
 ]
 
 const MenuItems:any = [
+  <MenuItem
+    key={1}
+    title={'Title'}
+    url={''}
+    logo={false}
+    logoAlt={''}
+  />,
+  <MenuItem
+    key={1}
+    title={'Title'}
+    url={''}
+    logo={'https://avatars.githubusercontent.com/u/53948891?v=4'}
+    logoAlt={''}
+  />
 ]
 
 export const LayoutSettings = {

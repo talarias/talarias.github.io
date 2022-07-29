@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { FooterItemData } from './types'
 
-import './footerItem.scss'
+import './styles/footerItem.scss'
 
 const FooterItem: FC<FooterItemData> = ({
   title,

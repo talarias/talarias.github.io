@@ -1,0 +1,26 @@
+.menu-item {
+    a {
+        display: flex;
+        width: 100%;
+        padding: 7px;
+        justify-content: space-between;
+        align-items: center;
+
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+            color: #284a7e;
+        }
+
+        img {
+            width: 36px;
+            height: 36px;
+            border-radius: 100%;
+            border: 1px solid white;
+        }
+        span.nav-menu-title {
+            font-size: 1.5rem;
+        }
+    }
+}

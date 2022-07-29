@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { MenuData } from './types'
 
-import './menu.scss'
+import './styles/menu.scss'
 
 const Menu: FC<MenuData> = ({
   menuItems = [],
