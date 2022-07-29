@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import {FC} from "react";
-import {TogglerData} from './types'
+import React, { FC, useState } from 'react'
+import { TogglerData } from './types'
 
 import './toggler.scss'
 
 const BurgerMenuToggler: FC<TogglerData> = ({
-  toggleFunc,
-  start,
-  isState
+  toggleFunc = () => {},
+  start = false,
+  isState = null
 }) => {
-  const [active, setActive] = useState(start);
+  const [active, setActive] = useState(start)
 
   const handleClick = () => {
     setActive(!active)
@@ -20,11 +19,12 @@ const BurgerMenuToggler: FC<TogglerData> = ({
     return isState
   }
 
-
   return (
     <>
       <div className={'burger-menu-toggler'}>
-        <button className={'ud_menu_icon ud_menu_icon-X ' + (isActive() ? 'is-active': '')} onClick={handleClick}>
+        <button
+          className={'ud_menu_icon ud_menu_icon-X ' + (isActive() ? 'is-active' : '')}
+          onClick={handleClick}>
           <span></span>
         </button>
       </div>
