@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Menu from './Menu'
 
-import './navigation.scss'
+import './styles/navigation.scss'
 import { NavigationData } from './types'
 
 const options = {
@@ -27,7 +27,7 @@ const Navigation: FC<NavigationData> = ({
 
   return (
     <>
-      <Navbar bg="dark" className='navbar-container' >
+      <Navbar className='navbar-container' >
         <Container>
           <Navbar.Brand href="/">
             <img src={logo} alt={'logo'}></img>

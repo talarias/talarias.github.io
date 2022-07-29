@@ -27,5 +27,12 @@ export class MenuData {
   menuFooterItems: any
 }
 
+export class MenuItemData {
+  title!: string
+  url!: string
+  logo: any
+  logoAlt!: string
+}
+
 export class LayoutData {
 }
