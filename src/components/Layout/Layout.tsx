@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
+import { Outlet } from 'react-router-dom'
+import Navigation from '../Navigation/Navigation'
+import { LayoutData } from '../Navigation/types'
 
 import { SiteSettings } from '../../SiteSettings'
 import { LayoutSettings } from '../../LayoutSettings'
-
-import Navigation from '../Navigation/Navigation'
-import { LayoutData } from '../Navigation/types'
 
 const Layout: FC<LayoutData> = () => {
   return (
@@ -16,6 +16,7 @@ const Layout: FC<LayoutData> = () => {
           siteTitle = {SiteSettings.siteTitle}
           siteSubTitle = {SiteSettings.siteSubTitle}
         />
+        <Outlet />
     </>
   )
 }

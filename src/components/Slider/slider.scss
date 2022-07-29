@@ -1,0 +1,19 @@
+.slider {
+    background: #202324;
+    color: white;
+
+    .slider-header {
+        width: 100%;
+        height: 65px;
+        display: flex;
+        justify-content: center;
+
+        img {
+            height: 150px;
+            position: relative;
+            border: 4px solid #284a7e;
+            border-radius: 100%;
+            top: -75px;
+        }
+    }
+}
