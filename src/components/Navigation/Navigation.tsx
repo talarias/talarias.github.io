@@ -20,7 +20,6 @@ const Navigation: FC<NavigationData> = ({
   logo = 'https://avatars.githubusercontent.com/u/53948831?v=3',
   siteTitle = 'Max Mustermann',
   siteSubTitle = 'githubname'
-
 }) => {
   const [show, setShow] = useState(false)
 

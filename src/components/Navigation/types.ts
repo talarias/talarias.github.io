@@ -1,9 +1,9 @@
 export class FooterItemData {
-  title!: string
-  url!: string
+  title!: any
+  url!: any
   logo: any
-  logoAlt: string | undefined
-  subTitle!: string
+  logoAlt: any
+  subTitle!: any
 }
 
 export type NavigationDataOld = {
@@ -16,7 +16,7 @@ export type NavigationDataOld = {
 
 export class NavigationData {
   menuItems: any
-  menuFooterItems!: FooterItemData[]
+  menuFooterItems: FooterItemData[] | any
   logo: any
   siteTitle!: string
   siteSubTitle!: string
@@ -24,5 +24,8 @@ export class NavigationData {
 
 export class MenuData {
   menuItems: any
-  menuFooterItems!: FooterItemData[]
+  menuFooterItems: any
+}
+
+export class LayoutData {
 }
