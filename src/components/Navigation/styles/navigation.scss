@@ -1,9 +1,10 @@
 .navbar-container {
-    background: #284a7e;
+    background: rgb(32 35 36);
 
     a {
         display: flex;
         color: white;
+        text-decoration: none;
 
         &:hover {
             color: white;
@@ -29,5 +30,10 @@
                 }
             }
         }
+    }
+}
+
+.offcanvas {
+    .offcanvas-body {
     }
 }

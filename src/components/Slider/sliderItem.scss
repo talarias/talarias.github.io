@@ -1,0 +1,17 @@
+.sliter-item-wrapper {
+    .sliter-item-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 21px;
+
+        .title-action {
+            display: flex;
+        }
+    }
+    .sliter-item-title-br {
+        width: 4rem;
+        height: 4px;
+        background: #284a7e;
+    }
+}
