@@ -19,7 +19,7 @@ const menuFooterItems:any = [
 const MenuItems:any = [
   <MenuItem
     key={1}
-    title={'Title'}
+    title={'Über mich'}
     url={''}
     logo={false}
     logoAlt={''}
