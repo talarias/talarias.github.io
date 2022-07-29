@@ -1,5 +1,5 @@
 .navbar-container {
-    background: #284a7e;
+    background: rgb(32 35 36);
 
     a {
         display: flex;
@@ -30,5 +30,10 @@
                 }
             }
         }
+    }
+}
+
+.offcanvas {
+    .offcanvas-body {
     }
 }

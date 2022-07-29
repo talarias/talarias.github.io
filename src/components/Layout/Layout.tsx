@@ -5,6 +5,9 @@ import { LayoutData } from '../Navigation/types'
 
 import { SiteSettings } from '../../SiteSettings'
 import { LayoutSettings } from '../../LayoutSettings'
+import Footer from '../Footer/Footer'
+
+import './layout.scss'
 
 const Layout: FC<LayoutData> = () => {
   return (
@@ -16,7 +19,10 @@ const Layout: FC<LayoutData> = () => {
           siteTitle = {SiteSettings.siteTitle}
           siteSubTitle = {SiteSettings.siteSubTitle}
         />
-        <Outlet />
+        <div className='layout-body' >
+          <Outlet />
+        </div>
+        <Footer />
     </>
   )
 }
