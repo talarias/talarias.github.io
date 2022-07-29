@@ -42,7 +42,7 @@ const Navigation: FC<NavigationData> = ({
       </Navbar>
 
       <Offcanvas show={show} onHide={toggleShow} {...options}>
-        <Offcanvas.Header closeButton={false}>
+        <Offcanvas.Header closeButton={true}>
           <Offcanvas.Title>Menu</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
