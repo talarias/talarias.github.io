@@ -13,7 +13,6 @@ const Slider: FC<any> = ({
   const [active, setActive] = useState(false)
   const toggle = () => {
     setActive(!active)
-    console.log('asdasd')
   }
 
   return (

@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
 import { Container } from 'react-bootstrap'
 
-import './sliderItem.scss'
+import './sliderCard.scss'
 
-const SliderItem: FC<any> = ({
+const sliderCard: FC<any> = ({
   title = 'Title',
   titleAction = null,
   children
@@ -30,4 +30,4 @@ const SliderItem: FC<any> = ({
   )
 }
 
-export default SliderItem
+export default sliderCard
