@@ -69,6 +69,11 @@ function Home () {
             <Skills items = {mySkills} showFilter = {true}/>
           </Section>
         </PageRow>
+        <PageRow variant = '' >
+          <Section title = 'Projects' >
+            Projects
+          </Section>
+        </PageRow>
       </PageParallax>
     </>
   )
