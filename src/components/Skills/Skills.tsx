@@ -1,13 +1,15 @@
 import React, { FC, useState } from 'react'
 import { Button, Col, Row } from 'react-bootstrap'
 import { SortNumericDown, SortNumericUp } from 'react-bootstrap-icons'
+import { SkillsData } from './types'
 
 import './skills.scss'
 
-const Skills: FC<any> = ({
-  skillsData = []
+const Skills: FC<SkillsData> = ({
+  showFilter = false,
+  items = []
 }) => {
-  const [sortdeSkillItems, setSortdeSkillItems] = useState(skillsData)
+  const [sortdeSkillItems, setSortdeSkillItems] = useState(items)
 
   const sortDescending = () => {
     setSortdeSkillItems([...sortdeSkillItems].sort((a, b) => a.percent < b.percent ? 1 : -1))
@@ -19,14 +21,18 @@ const Skills: FC<any> = ({
   return (
     <>
       <div className='skills-container'>
-        <Row className='sort-btns'>
-          <Button variant="outline-primary" onClick={sortDescending}><SortNumericDown /></Button>
-          <Button variant="outline-primary" onClick={sortExpand} ><SortNumericUp /></Button>
-        </Row>
+        {
+          showFilter
+            ? <Row className='sort-btns'>
+                <Button variant="outline-primary" onClick={sortDescending}><SortNumericDown /></Button>
+                <Button variant="outline-primary" onClick={sortExpand} ><SortNumericUp /></Button>
+              </Row>
+            : ''
+        }
         <Row>
           {sortdeSkillItems.map((skill:any, index:number) => {
             return (
-              <Col key={index} className='col-sm-4'>
+              <Col key={index} className='col-xs-12 col-sm-6 col-md-4'>
                 <div className='skill-item'>
                   <h5>{skill.title}</h5>
                   <div className='skill-item-percent-wapper'>

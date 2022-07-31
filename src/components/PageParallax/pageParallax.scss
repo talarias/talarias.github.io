@@ -1,12 +1,12 @@
-.home-wrapper {
+.section-wrapper {
     background-image: url(https://www.w3schools.com/howto/img_parallax.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
-    .home-head {
-        .home-title {
+    .section-head {
+        .section-title {
             height: 400px;
             display: flex;
             flex-direction: column;

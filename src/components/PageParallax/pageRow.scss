@@ -1,0 +1,26 @@
+.page-row {
+    padding: 21px 0 28px 0;
+
+    &.bright {
+        background: rgb(255 255 255 / 50%);
+        color: white;
+    }
+    &.dark {
+        background: rgba(0, 0, 0, 0.5019607843);
+        color: white;
+    }
+    &.fill {
+        background: rgb(32, 35, 36);
+        color: white;
+    }
+    &.row-border-top {
+        border-top: 2px solid #284a7e;
+    }
+    &.row-border-bottom {
+        border-bottom: 2px solid #284a7e;
+    }
+    &.row-border-top-bottom {
+        border-top: 2px solid #284a7e;
+        border-bottom: 2px solid #284a7e;
+    }
+}

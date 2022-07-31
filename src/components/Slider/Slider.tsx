@@ -1,14 +1,12 @@
 import React, { FC, useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
+import { SliderData } from './types'
 
 import './slider.scss'
 
-const Slider: FC<any> = ({
+const Slider: FC<SliderData> = ({
   sliderHeader = null,
-  items,
-  siteTitle = null,
-  job = null,
-  children = null
+  items
 }) => {
   const [active, setActive] = useState(false)
   const toggle = () => {

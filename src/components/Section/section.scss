@@ -1,5 +1,5 @@
-.sliter-item-wrapper {
-    .sliter-item-title {
+.section-item-wrapper {
+    .section-item-title {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -9,7 +9,7 @@
             display: flex;
         }
     }
-    .sliter-item-title-br {
+    .section-item-title-br {
         width: 4rem;
         height: 4px;
         background: #284a7e;

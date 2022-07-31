@@ -23,7 +23,9 @@ const Layout: FC<LayoutData> = () => {
         <div className='layout-body' >
           <Outlet />
         </div>
-        <Footer />
+        <Footer>
+          {LayoutSettings.footerContent}
+        </Footer>
     </>
   )
 }

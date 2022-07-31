@@ -6,9 +6,9 @@ import Portfolio from './pages/Portfolio'
 export const SiteSettings = {
   logo: 'https://avatars.githubusercontent.com/u/53948891?v=4',
   personalLogo: 'https://avatars.githubusercontent.com/u/53948891?v=4',
-  siteTitle: 'Florian Danzmann',
-  siteSubTitle: 'talarias',
-  job: 'Developer',
+  siteTitle: 'Max Mustermann',
+  siteSubTitle: 'githubname',
+  job: 'Job',
   githubUrl: 'https://github.com/talarias',
   sites: [
     <Route key={1} path="Contact" element={<Contact />} />,

@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
 import { Container } from 'react-bootstrap'
+import { SectionData } from './types'
 
-import './sliderCard.scss'
+import './section.scss'
 
-const sliderCard: FC<any> = ({
+const Section: FC<SectionData> = ({
   title = 'Title',
   titleAction = null,
   children
@@ -11,17 +12,17 @@ const sliderCard: FC<any> = ({
   return (
     <>
         <Container>
-            <div className='sliter-item-wrapper'>
-                <div className='sliter-item-title'>
+            <div className='section-item-wrapper'>
+                <div className='section-item-title'>
                     <div>
                       <h2>{title}</h2>
-                      <div className='sliter-item-title-br'></div>
+                      <div className='section-item-title-br'></div>
                     </div>
                     <div className='title-action'>
                       {titleAction}
                     </div>
                 </div>
-                <div className='sliter-content-wrapper'>
+                <div className='section-content-wrapper'>
                     {children}
                 </div>
             </div>
@@ -30,4 +31,4 @@ const sliderCard: FC<any> = ({
   )
 }
 
-export default sliderCard
+export default Section

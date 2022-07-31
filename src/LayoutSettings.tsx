@@ -1,20 +1,10 @@
 import React from 'react'
+import { Col, Container, Row } from 'react-bootstrap'
 
 import FooterItem from './components/Navigation/FooterItem'
 import MenuItem from './components/Navigation/MenuItem'
 
 import { SiteSettings } from './SiteSettings'
-
-const menuFooterItems:any = [
-    <FooterItem
-      key={1}
-      title = {'GitHub'}
-      subTitle = {SiteSettings.githubUrl}
-      url = {SiteSettings.githubUrl}
-      logo = {'/github.png'}
-      logoAlt = {'GitHub-logo'}
-    />
-]
 
 const MenuItems:any = [
   <MenuItem
@@ -40,6 +30,27 @@ const MenuItems:any = [
   />
 ]
 
+const menuFooterItems:any = [
+  <FooterItem
+    key={1}
+    title = {'GitHub'}
+    subTitle = {SiteSettings.githubUrl}
+    url = {SiteSettings.githubUrl}
+    logo = {'/github.png'}
+    logoAlt = {'GitHub-logo'}
+  />
+]
+
+const footerContent:any = (
+  <Container>
+    <Row>
+      <Col><p>Hostet with GitHub Pages</p></Col>
+      <Col><p>Hostet with GitHub Pages</p></Col>
+      <Col><p>Hostet with GitHub Pages</p></Col>
+    </Row>
+  </Container>
+)
+
 export const LayoutSettings = {
   menuItems: MenuItems.map((item:any, i:number) => (
     <div key={i}>
@@ -50,5 +61,6 @@ export const LayoutSettings = {
     <div key={i}>
       {item}
     </div>
-  ))
+  )),
+  footerContent
 }
