@@ -1,6 +1,8 @@
 .page-row {
-    padding: 21px 0 28px 0;
 
+    &.show-padding-true {
+        padding: 21px 0 28px 0;
+    }
     &.bright {
         background: rgb(255 255 255 / 50%);
         color: white;

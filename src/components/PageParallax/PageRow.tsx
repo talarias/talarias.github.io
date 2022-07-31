@@ -6,11 +6,12 @@ import './pageRow.scss'
 const PageRow: FC<PageRowData> = ({
   variant = 'dark',
   showBorder = '',
+  showPadding = true,
   children
 }) => {
   return (
     <>
-        <div className={'page-row ' + variant + ' row-border-' + showBorder}>
+        <div className={'page-row ' + variant + ' row-border-' + showBorder + ' show-padding-' + showPadding}>
           {children}
         </div>
     </>
