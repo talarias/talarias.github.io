@@ -1,19 +1,20 @@
 .page-row {
+    background: none;
+    -webkit-transition: background 1s linear;
+    -ms-transition: background 1s linear;
+    transition: background 1s linear;
 
     &.show-padding-true {
         padding: 21px 0 28px 0;
     }
     &.bright {
         background: rgb(255 255 255 / 50%);
-        color: white;
     }
     &.dark {
         background: rgba(0, 0, 0, 0.5019607843);
-        color: white;
     }
     &.fill {
         background: rgb(32, 35, 36);
-        color: white;
     }
     &.row-border-top {
         border-top: 2px solid #284a7e;

@@ -10,4 +10,5 @@ export class PageRowData {
   variant?: 'bright' | 'dark' | 'fill' | ''
   showBorder?: 'top' | 'bottom' | 'top-bottom' | ''
   showPadding?: Boolean
+  setFontColor?: string
 }

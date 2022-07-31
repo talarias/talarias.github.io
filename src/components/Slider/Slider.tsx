@@ -17,10 +17,10 @@ const Slider: FC<SliderData> = ({
   return (
     <>
       <PageRow
-          variant='fill'
+          variant={(active ? '' : 'fill')}
           showPadding={false}
         >
-          <div className={'slider ' + (active ? 'active' : '')}>
+          <div className='slider'>
             {sliderHeader
               ? <div className='slider-header'>
                 <img src={sliderHeader} alt={'asd'}></img>
