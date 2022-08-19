@@ -30,7 +30,7 @@ const Navigation: FC<NavigationData> = ({
 
   return (
     <>
-      <Navbar className='navbar-container' >
+      <Navbar className='navbar-container' fixed="top">
         <Container>
           <Link to={'/'}>
             <Navbar.Brand href="/">
