@@ -21,11 +21,6 @@ const Slider: FC<SliderData> = ({
           showPadding={false}
         >
           <div className='slider'>
-            {sliderHeader
-              ? <div className='slider-header'>
-                <img src={sliderHeader} alt={'asd'}></img>
-              </div>
-              : null}
             <Carousel fade style={{ minHeight: '400px' }} onSlide={toggle} onSlid={toggle} interval={8000}>
               {items.map((item: any, index: number) => {
                 return (
