@@ -21,7 +21,7 @@ const Slider: FC<SliderData> = ({
           showPadding={false}
         >
           <div className='slider'>
-            <Carousel fade style={{ minHeight: '400px' }} onSlide={toggle} onSlid={toggle} interval={8000}>
+            <Carousel style={{ minHeight: '400px' }} onSlide={toggle} onSlid={toggle} interval={8000}>
               {items.map((item: any, index: number) => {
                 return (
                   <Carousel.Item key={index}>
