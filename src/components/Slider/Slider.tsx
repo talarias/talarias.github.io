@@ -3,10 +3,9 @@ import Carousel from 'react-bootstrap/Carousel'
 import { SliderData } from './types'
 
 import './slider.scss'
-import PageRow from '../PageParallax/PageRow'
+import PageRow from '../PageRow/PageRow'
 
 const Slider: FC<SliderData> = ({
-  sliderHeader = null,
   items
 }) => {
   const [active, setActive] = useState(false)

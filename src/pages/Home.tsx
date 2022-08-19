@@ -3,7 +3,7 @@ import { Row, Col, Button } from 'react-bootstrap'
 import Header from '../components/Header/Header'
 import HeaderBrand from '../components/HeaderBrand/Header'
 import PageParallax from '../components/PageParallax/PageParallax'
-import PageRow from '../components/PageParallax/PageRow'
+import PageRow from '../components/PageRow/PageRow'
 import Projects from '../components/Projects/Projects'
 import Section from '../components/Section/Section'
 import Skills from '../components/Skills/Skills'
@@ -60,7 +60,6 @@ function Home () {
           frontImg = {SiteSettings.personalLogo}
         />
         <Slider
-          sliderHeader = {SiteSettings.personalLogo}
           items = {items}
         />
         <PageRow variant = 'dark' >
