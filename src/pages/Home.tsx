@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col, Button, Card } from 'react-bootstrap'
 import Header from '../components/Header/Header'
+import HeaderBrand from '../components/HeaderBrand/Header'
 import PageParallax from '../components/PageParallax/PageParallax'
 import PageRow from '../components/PageParallax/PageRow'
 import Section from '../components/Section/Section'
@@ -63,9 +64,12 @@ function Home () {
           title = {SiteSettings.siteTitle}
           subTitle = {SiteSettings.job}
         />
+        <HeaderBrand
+          frontImg = {SiteSettings.personalLogo}
+        />
         <Slider
-          sliderHeader={SiteSettings.personalLogo}
-          items={items}
+          sliderHeader = {SiteSettings.personalLogo}
+          items = {items}
         />
         <PageRow variant = 'dark' >
           <Section title = 'Skills' >
