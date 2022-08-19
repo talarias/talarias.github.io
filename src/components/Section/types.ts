@@ -1,5 +1,6 @@
 export class SectionData {
-  title!: String
+  title?: String
   titleAction?: any
+  simpleContent!: Boolean
   children: any
 }

@@ -16,6 +16,7 @@ const items = [
   <>
     <Section
       title = 'About me'
+      simpleContent = {true}
     >
       <Row>
         <Col><p>Im a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</p></Col>
@@ -27,6 +28,7 @@ const items = [
   <Section
     title = 'asdasd'
     titleAction = {<Button variant="outline-primary">Primary</Button>}
+    simpleContent = {true}
   >
     <Row>
       <Col><p>Im a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</p></Col>
@@ -38,6 +40,7 @@ const items = [
   <>
   <Section
     title = 'Skills'
+    simpleContent = {true}
   >
     <Row>
       <Skills items = {mySkills} showFilter = {true}/>
@@ -61,10 +64,13 @@ function Home () {
         />
         <Slider
           items = {items}
+          topics = {['t1', 't2']}
         />
         <PageRow variant = 'dark' >
           <Section
-            title = 'Projects' >
+            title = 'Projects'
+            simpleContent = {true}
+            >
             <Projects />
           </Section>
         </PageRow>
