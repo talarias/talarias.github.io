@@ -1,6 +1,4 @@
 export class PageParallaxData {
-  title!: String
-  subtitle?: String
   backgroundImg: any
   children: any
 }
