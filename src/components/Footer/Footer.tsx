@@ -9,12 +9,14 @@ const Footer: FC<FooterData> = ({
 }) => {
   return (
     <>
-        <PageRow
+      <div className='footer'>
+      <PageRow
           variant='fill'
           showBorder='top'
         >
           {children}
         </PageRow>
+      </div>
     </>
   )
 }

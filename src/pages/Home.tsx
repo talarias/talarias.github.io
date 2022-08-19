@@ -4,6 +4,7 @@ import Header from '../components/Header/Header'
 import HeaderBrand from '../components/HeaderBrand/Header'
 import PageParallax from '../components/PageParallax/PageParallax'
 import PageRow from '../components/PageParallax/PageRow'
+import Projects from '../components/Projects/Projects'
 import Section from '../components/Section/Section'
 import Skills from '../components/Skills/Skills'
 import Slider from '../components/Slider/Slider'
@@ -63,8 +64,9 @@ function Home () {
           items = {items}
         />
         <PageRow variant = 'dark' >
-          <Section title = 'Projects' >
-            Projects
+          <Section
+            title = 'Projects' >
+            <Projects />
           </Section>
         </PageRow>
       </PageParallax>
