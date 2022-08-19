@@ -43,10 +43,10 @@ const menuFooterItems:any = [
 
 const footerContent:any = (
   <Container>
-    <Row>
-      <Col><p>Hostet with GitHub Pages</p></Col>
-      <Col><p>Hostet with GitHub Pages</p></Col>
-      <Col><p>Hostet with GitHub Pages</p></Col>
+    <Row className="justify-content-md-center">
+      <Col xs={6} md={3}><p>Hostet with GitHub Pages</p></Col>
+      <Col xs={6} md={3}><p>Hostet with GitHub Pages</p></Col>
+      <Col xs={6} md={3}><p>Hostet with GitHub Pages</p></Col>
     </Row>
   </Container>
 )
