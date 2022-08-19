@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Button, Card } from 'react-bootstrap'
+import { Row, Col, Button } from 'react-bootstrap'
 import Header from '../components/Header/Header'
 import HeaderBrand from '../components/HeaderBrand/Header'
 import PageParallax from '../components/PageParallax/PageParallax'
@@ -36,19 +36,10 @@ const items = [
 </>,
   <>
   <Section
-    title = 'xxvxv'
+    title = 'Skills'
   >
     <Row>
-      <Card style={{ width: '18rem' }} bg={'dark'}>
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the cards content.
-          </Card.Text>
-          <Button variant="outline-primary">Primary</Button>
-        </Card.Body>
-      </Card>
+      <Skills items = {mySkills} showFilter = {true}/>
     </Row>
   </Section>
 </>
@@ -71,11 +62,6 @@ function Home () {
           sliderHeader = {SiteSettings.personalLogo}
           items = {items}
         />
-        <PageRow variant = 'dark' >
-          <Section title = 'Skills' >
-            <Skills items = {mySkills} showFilter = {true}/>
-          </Section>
-        </PageRow>
         <PageRow variant = 'dark' >
           <Section title = 'Projects' >
             Projects
