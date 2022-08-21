@@ -5,37 +5,70 @@ import { SliderData } from './types'
 import './slider.scss'
 import PageRow from '../PageRow/PageRow'
 import Section from '../Section/Section'
+import { ChevronLeftIcon, ChevronRightIcon } from '@primer/octicons-react'
+import { Col, Row } from 'react-bootstrap'
 
 const Slider: FC<SliderData> = ({
-  items,
+  items = [],
   topics = []
 }) => {
   const [active, setActive] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(undefined as number | undefined)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const toggle = () => {
     setActive(!active)
   }
 
-  const clearSetIndex = () => {
-    setCurrentIndex(undefined)
+  const slide = (step: number) => {
+    const nextIndex = currentIndex + step
+    const lastIndex = items.length - 1
+
+    if (nextIndex < 0) setCurrentIndex(lastIndex)
+    else if (nextIndex <= lastIndex) setCurrentIndex(nextIndex)
+    else setCurrentIndex(0)
   }
 
-  function setIndex (index:number) {
-    setCurrentIndex(index)
+  const genTopicElement = (topic: any, key: number, index: number, active: Boolean = false) => {
+    console.log(index ?? key)
+    return (
+      <Col key={key} xs={2} onClick={() => setCurrentIndex(index)}>
+        <h4 className={'active-' + active}>{topic}</h4>
+      </Col>
+    )
   }
 
-  const topicItems = topics.map((topic:any, index:number) => {
-    let active = false
+  const getCurrentTopics = () => {
+    const myList: any = []
+    const lastIndex = topics.length - 1
 
-    if (index === currentIndex) {
-      active = true
+    if (currentIndex === 0) {
+      myList.push(
+        genTopicElement(topics[lastIndex], 0, lastIndex)
+      )
     }
 
-    return (
-      <h4 key={index} onClick={() => setIndex(index)} className={'active-' + active}>{topic}</h4>
-    )
-  })
+    topics.forEach((topicElement, index) => {
+      let active = false
+
+      if (index >= currentIndex - 1 && index <= currentIndex + 1) {
+        const key = index + 1
+
+        if (currentIndex === index) active = true
+
+        myList.push(
+          genTopicElement(topicElement, key, index, active)
+        )
+      }
+    })
+
+    if (currentIndex === lastIndex) {
+      myList.push(
+        genTopicElement(topics[0], 0, 0)
+      )
+    }
+
+    return myList
+  }
 
   return (
     <>
@@ -43,13 +76,28 @@ const Slider: FC<SliderData> = ({
           variant={(active ? '' : 'fill')}
           showPadding={false}
         >
-          <div className='slider-head'>
+          <div className='slider-next'>
             <Section simpleContent = {false}>
-              {topicItems}
+              <a onClick={() => slide(1)}>
+                <ChevronRightIcon size={64} />
+              </a>
+            </Section>
+          </div>
+          <div className='slider-prev'>
+            <Section simpleContent = {false}>
+              <a onClick={() => slide(-1)}>
+                <ChevronLeftIcon size={64} />
+              </a>
             </Section>
           </div>
           <div className='slider'>
-            <Carousel style={{ minHeight: '400px' }} onSlide={toggle} onSlid={toggle} onSelect={clearSetIndex} interval={10000} activeIndex={currentIndex}>
+            <Carousel
+              style={{ minHeight: '400px' }}
+              onSlide={toggle}
+              onSlid={toggle}
+              activeIndex={currentIndex}
+              controls={false}
+              >
               {items.map((item: any, index: number) => {
                 return (
                   <Carousel.Item key={index}>
@@ -58,6 +106,13 @@ const Slider: FC<SliderData> = ({
                 )
               })}
             </Carousel>
+          </div>
+          <div className='slider-head'>
+            <Section simpleContent = {false}>
+              <Row className="justify-content-md-center">
+                {getCurrentTopics()}
+              </Row>
+            </Section>
           </div>
       </PageRow>
     </>
