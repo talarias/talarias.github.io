@@ -4,6 +4,7 @@
     .topics-prev, .topics-next {
         color: #fff;
         opacity: .5;
+        cursor: pointer;
         transition: opacity .15s ease;
 
         a {
@@ -58,7 +59,7 @@
         text-align: center;
         background: 0 0;
         border: 0;
-        opacity: .3;
+        opacity: .20;
         cursor: pointer;
         transition: opacity .15s ease;
 

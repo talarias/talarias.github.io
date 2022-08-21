@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import { SliderData } from './types'
 
@@ -10,10 +10,21 @@ import { Col, Row } from 'react-bootstrap'
 
 const Slider: FC<SliderData> = ({
   items = [],
-  topics = []
+  topics = [],
+  interval = 10000
 }) => {
   const [active, setActive] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentInterval, setCurrentInterval] = useState(interval)
+
+  if (interval) {
+    useEffect(() => {
+      setInterval(() => {
+        slide(1)
+        setCurrentInterval(10000)
+      }, currentInterval)
+    }, [currentIndex])
+  }
 
   const toggle = () => {
     setActive(!active)
@@ -26,10 +37,10 @@ const Slider: FC<SliderData> = ({
     if (nextIndex < 0) setCurrentIndex(lastIndex)
     else if (nextIndex <= lastIndex) setCurrentIndex(nextIndex)
     else setCurrentIndex(0)
+    setCurrentInterval(15000)
   }
 
   const genTopicElement = (topic: any, key: number, index: number, active: Boolean = false) => {
-    console.log(index ?? key)
     return (
       <Col key={key} xs={2} onClick={() => setCurrentIndex(index)}>
         <h4 className={'active-' + active}>{topic}</h4>
