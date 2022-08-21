@@ -42,7 +42,7 @@ const Slider: FC<SliderData> = ({
 
   const genTopicElement = (topic: any, key: number, index: number, active: Boolean = false) => {
     return (
-      <Col key={key} xs={2} onClick={() => setCurrentIndex(index)}>
+      <Col key={key} xs={6} md={2} onClick={() => setCurrentIndex(index)}>
         <h4 className={'active-' + active}>{topic}</h4>
       </Col>
     )
@@ -121,14 +121,14 @@ const Slider: FC<SliderData> = ({
           <div className='slider-topics'>
             <Section simpleContent = {false}>
               <Row className="justify-content-md-center">
-                <Col xs={1} className='topics-prev'>
+                <Col xs={6} md={1} className='topics-prev'>
                   <a onClick={() => slide(-1)}>
                     <ChevronLeftIcon size={34} />
                   </a>
                 </Col>
                 {getCurrentTopics()}
-                <Col xs={1} className='topics-next'>
-                  <a onClick={() => slide(1)}>
+                <Col xs={6} md={1} className='topics-next'>
+                  <a onClick={() => slide(1) }>
                     <ChevronRightIcon size={34} />
                   </a>
                 </Col>
