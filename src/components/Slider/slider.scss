@@ -5,11 +5,10 @@
         color: #fff;
         opacity: .5;
         cursor: pointer;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
         transition: opacity .15s ease;
-
-        a {
-            margin: 34px;
-        }
 
         &:hover {
             color: #fff;
