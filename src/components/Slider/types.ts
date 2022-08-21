@@ -1,4 +1,5 @@
 export class SliderData {
-  sliderHeader!: any | null
   items?: any
+  topics?: String[]
+  interval?: number
 }

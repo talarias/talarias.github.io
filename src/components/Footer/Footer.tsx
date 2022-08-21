@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import PageRow from '../PageParallax/PageRow'
+import PageRow from '../PageRow/PageRow'
 import { FooterData } from './types'
 
 import './footer.scss'
@@ -9,12 +9,14 @@ const Footer: FC<FooterData> = ({
 }) => {
   return (
     <>
-        <PageRow
+      <div className='footer'>
+      <PageRow
           variant='fill'
           showBorder='top'
         >
           {children}
         </PageRow>
+      </div>
     </>
   )
 }
