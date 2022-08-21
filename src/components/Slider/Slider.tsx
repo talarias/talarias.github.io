@@ -107,10 +107,20 @@ const Slider: FC<SliderData> = ({
               })}
             </Carousel>
           </div>
-          <div className='slider-head'>
+          <div className='slider-topics'>
             <Section simpleContent = {false}>
               <Row className="justify-content-md-center">
+                <Col xs={1} className='topics-prev'>
+                  <a onClick={() => slide(-1)}>
+                    <ChevronLeftIcon size={34} />
+                  </a>
+                </Col>
                 {getCurrentTopics()}
+                <Col xs={1} className='topics-next'>
+                  <a onClick={() => slide(1)}>
+                    <ChevronRightIcon size={34} />
+                  </a>
+                </Col>
               </Row>
             </Section>
           </div>
