@@ -64,7 +64,7 @@ function Home () {
         />
         <Slider
           items = {items}
-          topics = {['t1', 't2']}
+          topics = {['t1', 't2', 't3']}
         />
         <PageRow variant = 'dark' >
           <Section
