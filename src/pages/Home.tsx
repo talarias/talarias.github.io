@@ -78,7 +78,6 @@ function Home () {
         <Slider
           items = {items}
           topics = {['About me', 'Test', 'Skills test', 'Test 2']}
-          interval = {0}
         />
         <PageRow variant = 'dark' >
           <Section
