@@ -5,7 +5,8 @@ import Portfolio from './pages/Portfolio'
 
 export const SiteSettings = {
   logo: 'https://avatars.githubusercontent.com/u/53948891?v=4',
-  personalLogo: 'https://avatars.githubusercontent.com/u/53948891?v=4',
+  githubLogo: 'https://avatars.githubusercontent.com/u/53948891?v=4',
+  personalLogo: '/homeBg.jpeg',
   siteTitle: 'Max Mustermann',
   siteSubTitle: 'githubname',
   job: 'Job',
