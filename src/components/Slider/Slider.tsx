@@ -11,18 +11,17 @@ import { Col, Row } from 'react-bootstrap'
 const Slider: FC<SliderData> = ({
   items = [],
   topics = [],
-  interval = 10000
+  interval = 15000
 }) => {
   const [active, setActive] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [currentInterval, setCurrentInterval] = useState(interval)
 
   if (interval) {
     useEffect(() => {
-      setInterval(() => {
+      const timer = setInterval(() => {
         slide(1)
-        setCurrentInterval(10000)
-      }, currentInterval)
+      }, interval)
+      return () => clearInterval(timer)
     }, [currentIndex])
   }
 
@@ -37,7 +36,6 @@ const Slider: FC<SliderData> = ({
     if (nextIndex < 0) setCurrentIndex(lastIndex)
     else if (nextIndex <= lastIndex) setCurrentIndex(nextIndex)
     else setCurrentIndex(0)
-    setCurrentInterval(15000)
   }
 
   const genTopicElement = (topic: any, key: number, index: number, active: Boolean = false) => {
