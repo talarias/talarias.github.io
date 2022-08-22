@@ -1,49 +1,114 @@
-.header-brand {
-    width: 100%;
-    height: 0;
+@keyframes zoom-out {
+    0% {transform: scale(1) rotateY(0deg)}
+    25% {transform: scale(1.2) rotateY(0deg)}
+    75% {transform: scale(1.2) rotateY(180deg)}
+    100% {transform: scale(1) rotateY(180deg)}
+}
+@keyframes zoom-in {
+    0% {transform: scale(1) rotateY(180deg)}
+    25% {transform: scale(1.2) rotateY(180deg)}
+    75% {transform: scale(1.2) rotateY(0deg)}
+    100% {transform: scale(1) rotateY(0deg)}
+}
+@keyframes prog-in {
+    0% {width: 0%}
+    100% {width: 100%}
+}
+@keyframes prog-out {
+    0% {width: 100%}
+    100% {width: 0%}
+}
+
+.header-brand-box {
     display: flex;
     justify-content: center;
-    background: none;
-
-    perspective: 600px;
-
-    .card {
-        height: 150px;
-        width: 150px;
-        position: relative;
-        transition: transform 1s;
-        transform-style: preserve-3d;
-        background: none;
-        backface-visibility: hidden;
-        cursor: pointer;
-        top: -85px;
-
-        img {
-            height: 100%;
-            width: 100%;
-            position: relative;
-            border: 2px solid #284a7e;
-            border-radius: 100%;
     
+    .header-brand-prog-box {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+
+        .header-brand-prog-left, .header-brand-prog-right {
+            height: 2px;
+            width: 0%;
+            background: #284a7e;
+            animation: prog-out 1.2s forwards;
+        }
+    }
+    .btn-box {
+        position: absolute;
+
+        .header-brand-btn {
+            position: absolute;
+            top: -62px;
+            height: 120px;
+            width: 120px;
+            z-index: 2;
+            left: -60px;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+    }
+    .header-brand {
+        width: 100%;
+        height: 0;
+        display: flex;
+        justify-content: center;
+        background: none;
+    
+        perspective: 600px;
+    
+        .card {
+            height: 120px;
+            width: 120px;
+            position: relative;
             transition: transform 1s;
             transform-style: preserve-3d;
+            background: none;
             backface-visibility: hidden;
+            top: -62px;
+            border-radius: 100%;
     
-            &.img-front {
-                position: absolute;
+            animation: zoom-in 1.2s;
+    
+            img {
+                height: 100%;
+                width: 100%;
+                position: relative;
+                border: 2px solid #284a7e;
+                border-radius: 100%;
+        
+                transition: transform 1s;
+                transform-style: preserve-3d;
                 backface-visibility: hidden;
+        
+                &.img-front {
+                    position: absolute;
+                    backface-visibility: hidden;
+                }
+                &.img-back {
+                    transform: rotateY(180deg);
+                }        
             }
-            &.img-back {
-                transform: rotateY(180deg);
-            }        
         }
     }
 
     &.flipped-true {
-        border-top: 2px solid #284a7e;
+        .header-brand-prog-box {
+            .header-brand-prog-left, .header-brand-prog-right {
+                animation: prog-in 1.2s forwards;
+            }
+        }
+        .header-brand {
+            .card {
+                animation: zoom-out 1.2s;
+                transform: rotateY(180deg);
 
-        .card {
-            transform: rotateY(180deg);
+                img {
+                    box-shadow: 10px 10px 20px #000000;
+                }
+            }
         }
     }
 }

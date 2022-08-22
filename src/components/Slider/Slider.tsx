@@ -11,16 +11,17 @@ import { Col, Row } from 'react-bootstrap'
 const Slider: FC<SliderData> = ({
   items = [],
   topics = [],
-  interval = 10000
+  interval = 15000
 }) => {
   const [active, setActive] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
 
   if (interval) {
     useEffect(() => {
-      setInterval(() => {
+      const timer = setInterval(() => {
         slide(1)
       }, interval)
+      return () => clearInterval(timer)
     }, [currentIndex])
   }
 
