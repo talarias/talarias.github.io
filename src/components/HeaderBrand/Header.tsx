@@ -15,7 +15,7 @@ const HeaderBrand: FC<HeaderBrandData> = ({
   useEffect(() => {
     setInterval(() => {
       toggle()
-    }, 8000)
+    }, 10000)
   }, [active])
 
   return (
