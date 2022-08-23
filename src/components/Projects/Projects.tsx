@@ -3,13 +3,33 @@ import { ProjectsData } from './types'
 
 import './projects.scss'
 import Card from './../3Dcard/Card'
+import { Col, Row } from 'react-bootstrap'
 
 const Projects: FC<ProjectsData> = ({
   projectItems
 }) => {
   return (
     <>
-      <Card title={'testTitle'} />
+      <Row>
+        <Col xs={12} md={6} xl={4}>
+          <Card
+            title={'testTitle'}
+            subTitle={'subTitle'}
+          />
+        </Col>
+        <Col xs={12} md={6} xl={4}>
+          <Card
+            title={'testTitle'}
+            subTitle={'subTitle'}
+          />
+        </Col>
+        <Col xs={12} md={6} xl={4}>
+          <Card
+            title={'testTitle'}
+            subTitle={'subTitle'}
+          />
+        </Col>
+      </Row>
     </>
   )
 }

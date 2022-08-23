@@ -1,6 +1,7 @@
 $clip: -0px;
 
 .card-box-3d {
+    width: 400px;
 
     .wrap {
         perspective: 600px;
@@ -12,7 +13,6 @@ $clip: -0px;
         right: 0;
         overflow: hidden;
         text-align: center;
-        position: absolute;
 
         .card-shadow, .card {
             margin: auto;
@@ -31,13 +31,18 @@ $clip: -0px;
             transform-style: preserve-3d;
             transform: translateZ(40px);
             z-index: -1;
-            background: #B3B3B3;
+            background: #000000;
             transform: scale(.5,.5);
             box-shadow: 0 0 30px 20px #000000;
         }
         .card {
-            background: #fff url('https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?fit=crop&fm=jpg&h=950&q=80&w=1925') 50% 50%;
-    
+            cursor: pointer;
+            
+            .content-overlay {
+                width: 300px;
+                height: 450px;
+                z-index: 5;
+            }
             .card-front, .card-title, .card-subtitle {
                 position: absolute;
                 color: #FFF;
@@ -55,7 +60,7 @@ $clip: -0px;
                     text-align: left;
                     left: 30px;
                     bottom: 140px;
-                    font-size: 35px;
+                    font-size: 1.5rem;
                     line-height: 30px;
                     text-shadow: 0 5px 8px rgba(0,0,0,.65);
                     transform: translateZ(0px);
@@ -69,7 +74,7 @@ $clip: -0px;
                     left: 30px;
                     width: 80%;
                     bottom: 80px;
-                    font-size: 25px;
+                    font-size: 1.5rem;
                     line-height: 20px;
                     text-shadow: 0 3px 6px rgba(0,0,0,.8);
                     transform: translateZ(0px);
@@ -86,6 +91,13 @@ $clip: -0px;
                     z-index: -1;
                 }
             }
+        }
+    }
+
+    &.active-false {
+
+        .card {
+            transition: all 1s;
         }
     }
 }
