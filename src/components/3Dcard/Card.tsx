@@ -6,7 +6,8 @@ import './card.scss'
 const Card: FC<CardData> = ({
   title,
   subTitle = undefined,
-  backgroundData = 'url(/homeBg.jpeg)'
+  backgroundData = 'url(/homeBg.jpeg)',
+  windowFx = false
 }) => {
   const [active, setActive] = useState(false)
   const [cardShineStyle, setCardShineStyle] = useState({})
@@ -21,7 +22,8 @@ const Card: FC<CardData> = ({
     })
     setCardStyle({
       WebkitTransform: 'translate3d(' + positionsData.trans1 + ', ' + positionsData.trans2 + ', 0) scale(1.2) rotatex(' + positionsData.around1 + ') rotatey(' + positionsData.around2 + ')',
-      background: backgroundData
+      background: backgroundData,
+      backgroundPosition: windowFx ? (positionsData.mousePositionX + '%' + ' ' + (positionsData.currentMousePosY / positionsData.wHeight) * 50 + '%') : ''
       // backgroundPosition: positionsData.mousePositionX + '%' + ' ' + (positionsData.currentMousePosY / positionsData.wHeight) * 50 + '%'
     })
     setCardShadowStyle({

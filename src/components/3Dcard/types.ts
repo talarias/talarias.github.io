@@ -2,6 +2,7 @@ export class CardData {
   title?: String
   subTitle?: String | undefined
   backgroundData?: any
+  windowFx?: Boolean
 }
 
 export class MousePos {

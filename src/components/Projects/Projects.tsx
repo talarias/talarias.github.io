@@ -21,6 +21,7 @@ const Projects: FC<ProjectsData> = ({
           <Card
             title={'testTitle'}
             subTitle={'subTitle'}
+            windowFx={true}
           />
         </Col>
         <Col xs={12} md={6} xl={4}>
