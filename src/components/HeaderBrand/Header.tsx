@@ -33,7 +33,7 @@ const HeaderBrand: FC<HeaderBrandData> = ({
         <div className='btn-box'>
           <div className='header-brand-btn'></div>
         </div>
-        <div className={'header-brand flipped-' + active}>
+        <div className={'header-brand'}>
           <div className='card'>
             <img src={frontImg} alt={'header-brand'} className='img-front'></img>
             <img src={backImg ?? frontImg} alt={'header-brand'} className='img-back'></img>
