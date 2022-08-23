@@ -6,7 +6,7 @@ import './card.scss'
 const Card: FC<CardData> = ({
   title,
   subTitle = undefined,
-  backgroundData = 'url(https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?fit=crop&fm=jpg&h=950&q=80&w=1925)'
+  backgroundData = 'url(/homeBg.jpeg)'
 }) => {
   const [active, setActive] = useState(false)
   const [cardShineStyle, setCardShineStyle] = useState({})
@@ -20,12 +20,12 @@ const Card: FC<CardData> = ({
       background: 'linear-gradient(' + positionsData.angle + 'deg, rgba(255,255,255, ' + (positionsData.currentMousePosY / positionsData.wHeight) * 0.7 + ') 0% ,rgba(255,255,255, 0) 80%)'
     })
     setCardStyle({
-      WebkitTransform: 'translate3d(' + positionsData.trans1 + ', ' + positionsData.trans2 + ', 0) scale(1) rotatex(' + positionsData.around1 + ') rotatey(' + positionsData.around2 + ')',
+      WebkitTransform: 'translate3d(' + positionsData.trans1 + ', ' + positionsData.trans2 + ', 0) scale(1.2) rotatex(' + positionsData.around1 + ') rotatey(' + positionsData.around2 + ')',
       background: backgroundData
       // backgroundPosition: positionsData.mousePositionX + '%' + ' ' + (positionsData.currentMousePosY / positionsData.wHeight) * 50 + '%'
     })
     setCardShadowStyle({
-      transform: 'scale(.9,.9) translateX(' + ((positionsData.mouseFromCenterX * -0.02) + 12) + 'px) translateY(' + ((positionsData.mouseFromCenterY * -0.02) + 12) + 'px) scale(1.0) rotateY(' + (positionsData.mouseFromCenterX / 25) * 0.5 + 'deg) rotateX(' + ((positionsData.mouseFromCenterY / -25)) + 'deg)'
+      transform: 'scale(1.1,1.1) translateX(' + ((positionsData.mouseFromCenterX * -0.02) + 12) + 'px) translateY(' + ((positionsData.mouseFromCenterY * -0.02) + 12) + 'px) scale(1.0) rotateY(' + (positionsData.mouseFromCenterX / 25) * 0.5 + 'deg) rotateX(' + ((positionsData.mouseFromCenterY / -25)) + 'deg)'
     })
     setCardTitleStyle({
       transform: 'translateX(' + ((positionsData.mouseFromCenterX / 25) * 0.7) + 'px) translateY(' + ((positionsData.mouseFromCenterY / 25) * 1.65) + 'px)'
