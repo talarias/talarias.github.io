@@ -1,12 +1,15 @@
 $clip: -0px;
+$cardHeight: 350px;
+$cardWidth: 250px;
 
 .card-box-3d {
-    width: 400px;
+    min-width: calc($cardHeight + 100px);
+    width: 100%;
 
     .wrap {
         perspective: 600px;
-        height: 550px;
-        width: 400px;
+        height: calc($cardHeight + 150px);
+        width: 100%;
         top: 0;
         bottom: 0;
         left: 0;
@@ -16,8 +19,8 @@ $clip: -0px;
 
         .card-shadow, .card {
             margin: auto;
-            width: 300px;
-            height: 450px;
+            width: $cardWidth;
+            height: $cardHeight;
             z-index: 1;
             position: absolute;
             border-radius: 10px;  
@@ -39,8 +42,8 @@ $clip: -0px;
             cursor: pointer;
             
             .content-overlay {
-                width: 300px;
-                height: 450px;
+                width: $cardWidth;
+                height: $cardHeight;
                 z-index: 5;
             }
             .card-front, .card-title, .card-subtitle {
