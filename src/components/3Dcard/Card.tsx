@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import { CardData, MousePos, PositionsData } from './types'
+import { CardData, CardStyleData, MousePos, PositionsData } from './types'
 
 import './card.scss'
 
@@ -11,21 +11,25 @@ const Card: FC<CardData> = ({
 }) => {
   const [active, setActive] = useState(false)
   const [cardShineStyle, setCardShineStyle] = useState({})
-  const [cardStyle, setCardStyle] = useState({ background: backgroundData + ' 50% 50%' } as any)
+  const [cardStyle, setCardStyle] = useState({ background: backgroundData as String + ' 50% 50%' } as any)
   const [cardShadowStyle, setCardShadowStyle] = useState({})
   const [cardTitleStyle, setCardTitleStyle] = useState({})
   const [cardSubtitleStyle, setCardSubtitleStyle] = useState({})
 
   const setCardPositions = (positionsData: PositionsData) => {
+    const cardStyle: CardStyleData = {
+      WebkitTransform: 'translate3d(' + positionsData.trans1 + ', ' + positionsData.trans2 + ', 0) scale(1.2) rotatex(' + positionsData.around1 + ') rotatey(' + positionsData.around2 + ')',
+      background: backgroundData as String + ' 50% 50%'
+    }
     setCardShineStyle({
       background: 'linear-gradient(' + positionsData.angle + 'deg, rgba(255,255,255, ' + (positionsData.currentMousePosY / positionsData.wHeight) * 0.7 + ') 0% ,rgba(255,255,255, 0) 80%)'
     })
-    setCardStyle({
-      WebkitTransform: 'translate3d(' + positionsData.trans1 + ', ' + positionsData.trans2 + ', 0) scale(1.2) rotatex(' + positionsData.around1 + ') rotatey(' + positionsData.around2 + ')',
-      background: backgroundData,
-      backgroundPosition: windowFx ? (positionsData.mousePositionX + '%' + ' ' + (positionsData.currentMousePosY / positionsData.wHeight) * 50 + '%') : ''
-      // backgroundPosition: positionsData.mousePositionX + '%' + ' ' + (positionsData.currentMousePosY / positionsData.wHeight) * 50 + '%'
-    })
+
+    if (windowFx) {
+      cardStyle.backgroundPosition = (positionsData.mousePositionX + '%' + ' ' + (positionsData.currentMousePosY / positionsData.wHeight) * 50 + '%')
+    }
+    setCardStyle(cardStyle)
+
     setCardShadowStyle({
       transform: 'scale(1.1,1.1) translateX(' + ((positionsData.mouseFromCenterX * -0.02) + 12) + 'px) translateY(' + ((positionsData.mouseFromCenterY * -0.02) + 12) + 'px) scale(1.0) rotateY(' + (positionsData.mouseFromCenterX / 25) * 0.5 + 'deg) rotateX(' + ((positionsData.mouseFromCenterY / -25)) + 'deg)'
     })
@@ -62,9 +66,6 @@ const Card: FC<CardData> = ({
     const angle = theta * 180 / Math.PI - 90
     const mousePositionX = (currentMousePos.x / wWidth) * 100
 
-    console.log(event)
-    console.log(event.target.getBoundingClientRect())
-
     setActive(true)
 
     setCardPositions({
@@ -82,9 +83,12 @@ const Card: FC<CardData> = ({
   }
 
   const resetTouch = () => {
+    const cardStyle: CardStyleData = {
+      background: '' + backgroundData as String + ' 50% 50%'
+    }
     setActive(false)
     setCardShineStyle({})
-    setCardStyle({ background: backgroundData })
+    setCardStyle(cardStyle)
     setCardShadowStyle({})
     setCardTitleStyle({})
     setCardSubtitleStyle({})

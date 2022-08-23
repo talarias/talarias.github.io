@@ -5,6 +5,12 @@ export class CardData {
   windowFx?: Boolean
 }
 
+export class CardStyleData {
+  WebkitTransform?: String
+  background?: String
+  backgroundPosition?: String
+}
+
 export class MousePos {
   x!: number
   y!: number
