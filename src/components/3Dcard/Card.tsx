@@ -7,7 +7,8 @@ const Card: FC<CardData> = ({
   title,
   subTitle = undefined,
   backgroundData = 'url(/homeBg.jpeg)',
-  windowFx = false
+  windowFx = false,
+  overlay = false
 }) => {
   const [active, setActive] = useState(false)
   const [cardStyle, setCardStyle] = useState({ background: backgroundData as String + ' 50% 50%' } as any)
@@ -27,7 +28,7 @@ const Card: FC<CardData> = ({
     setCardStyle(cardStyle)
 
     setCardShadowStyle({
-      transform: 'scale(1.1,1.1) translateX(' + ((positionsData.mouseFromCenterX * -0.02) + 12) + 'px) translateY(' + ((positionsData.mouseFromCenterY * -0.02) + 12) + 'px) scale(1.0) rotateY(' + (positionsData.mouseFromCenterX / 25) * 0.8 + 'deg) rotateX(' + ((positionsData.mouseFromCenterY / -25)) + 'deg)'
+      transform: 'scale(1.0,1.0) translateX(' + ((positionsData.mouseFromCenterX * -0.02) + 12) + 'px) translateY(' + ((positionsData.mouseFromCenterY * -0.02) + 12) + 'px) scale(1.0) rotateY(' + (positionsData.mouseFromCenterX / 25) * 0.8 + 'deg) rotateX(' + ((positionsData.mouseFromCenterY / -25)) + 'deg)'
     })
     setCardTitleStyle({
       transform: 'translateX(' + ((positionsData.mouseFromCenterX / 25) * 0.7) + 'px) translateY(' + ((positionsData.mouseFromCenterY / 25) * 1.65) + 'px)'
@@ -106,6 +107,9 @@ const Card: FC<CardData> = ({
             </div>
           </div>
         </div>
+        {
+          overlay ? <div id="overlay" className={'active-' + active}></div> : undefined
+        }
     </>
   )
 }

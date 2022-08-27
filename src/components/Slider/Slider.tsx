@@ -46,6 +46,20 @@ const Slider: FC<SliderData> = ({
     )
   }
 
+  const genIndexes = () => {
+    const myList: any = []
+
+    topics.forEach((topicElement, index) => {
+      let isActive = false
+      if (currentIndex === index) isActive = true
+
+      myList.push(
+        <div key={index} className={'index active-' + isActive} onClick={() => setCurrentIndex(index)} title={topicElement as string}></div>
+      )
+    })
+    return myList
+  }
+
   const getCurrentTopics = () => {
     const myList: any = []
     const lastIndex = topics.length - 1
@@ -106,6 +120,7 @@ const Slider: FC<SliderData> = ({
               onSlid={toggle}
               activeIndex={currentIndex}
               controls={false}
+              indicators={false}
               >
               {items.map((item: any, index: number) => {
                 return (
@@ -115,6 +130,9 @@ const Slider: FC<SliderData> = ({
                 )
               })}
             </Carousel>
+          </div>
+          <div className='index-wrapper active-'>
+            {genIndexes()}
           </div>
           <div className='slider-topics'>
             <Section simpleContent = {false}>

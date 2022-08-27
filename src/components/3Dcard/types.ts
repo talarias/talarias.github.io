@@ -3,6 +3,7 @@ export class CardData {
   subTitle?: String | undefined
   backgroundData?: any
   windowFx?: Boolean
+  overlay?: Boolean
 }
 
 export class CardStyleData {

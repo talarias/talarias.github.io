@@ -1,3 +1,23 @@
+.index-wrapper {
+    display: flex;
+    margin-bottom: 21px;
+    flex-direction: row;
+    justify-content: center;
+
+    .index {
+        width: 30px;
+        height: 3px;
+        margin: 4px;
+        opacity: .5;
+        background: white;
+        cursor: pointer;
+
+        &:hover, &.active-true {
+            opacity: 1;
+        }
+    }
+}
+
 .slider-topics {
     padding-bottom: 21px;
 
