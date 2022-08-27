@@ -2,6 +2,11 @@ $clip: -0px;
 $cardHeight: 350px;
 $cardWidth: 250px;
 
+@keyframes lights-on {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
 #overlay {
     display: none;
     position: fixed;
@@ -14,12 +19,8 @@ $cardWidth: 250px;
 
     &.active-true {
         display: block;
+        animation: lights-on 1s;
     }
-}
-
-.highlight {
-    position: relative;
-    z-index: 11;
 }
 
 .card-box-3d {
@@ -67,7 +68,7 @@ $cardWidth: 250px;
                 height: $cardHeight;
                 z-index: 5;
             }
-            .card-front, .card-title, .card-subtitle {
+            .card-front, .card-title, .card-subtitle, .card-descr {
                 position: absolute;
                 color: #FFF;
                 transform-style: preserve-3d;

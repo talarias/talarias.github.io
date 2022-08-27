@@ -115,7 +115,7 @@ const Slider: FC<SliderData> = ({
           </div>
           <div className='slider'>
             <Carousel
-              style={{ minHeight: '400px' }}
+              style={{ minHeight: '300px' }}
               onSlide={toggle}
               onSlid={toggle}
               activeIndex={currentIndex}
