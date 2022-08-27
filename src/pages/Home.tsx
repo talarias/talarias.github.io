@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col, Button } from 'react-bootstrap'
 import Header from '../components/Header/Header'
-import HeaderBrand from '../components/HeaderBrand/Header'
+import Coin from '../components/Coin/Coin'
 import PageParallax from '../components/PageParallax/PageParallax'
 import PageRow from '../components/PageRow/PageRow'
 import Projects from '../components/Projects/Projects'
@@ -72,7 +72,7 @@ function Home () {
           title = {SiteSettings.siteTitle}
           subTitle = {SiteSettings.job}
         />
-        <HeaderBrand
+        <Coin
           frontImg = {SiteSettings.githubLogo}
           backImg = {SiteSettings.personalLogo}
         />

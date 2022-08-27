@@ -102,6 +102,11 @@
 
 
     &:hover {
+        .header-brand-prog-box {
+            .header-brand-prog-left, .header-brand-prog-right {
+                animation: prog-in 1.2s forwards;
+            }
+        }
         .header-brand {
             .card {
                 // transform: scale(1.1);
@@ -113,11 +118,6 @@
         }
     }
     &.flipped-true {
-        .header-brand-prog-box {
-            .header-brand-prog-left, .header-brand-prog-right {
-                animation: prog-in 1.2s forwards;
-            }
-        }
         .header-brand {
             .card {
                 animation: zoom-out 1.2s;
