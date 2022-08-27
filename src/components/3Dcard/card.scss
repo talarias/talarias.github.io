@@ -26,7 +26,6 @@ $cardWidth: 250px;
     min-width: calc($cardHeight + 100px);
     width: 100%;
     position: relative;
-    z-index: 11;
 
     .wrap {
         perspective: 600px;
@@ -108,7 +107,11 @@ $cardWidth: 250px;
         }
     }
 
+    &.active-true {
+        z-index: 11;
+    }
     &.active-false {
+        z-index: 5;
 
         .card {
             transition: all 1s;

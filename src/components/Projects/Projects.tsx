@@ -28,6 +28,7 @@ const Projects: FC<ProjectsData> = ({
           <Card
             title={'testTitle'}
             subTitle={'subTitle'}
+            overlay={false}
           />
         </Col>
       </Row>
