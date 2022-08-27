@@ -25,7 +25,7 @@ const Coin: FC<HeaderBrandData> = ({
 
   return (
     <>
-      <div className={'header-brand-box flipped-' + active} onClick={toggle}>
+      <div className={'coin-wrapper-box flipped-' + active} onClick={toggle}>
         <div className='header-brand-prog-box'>
           <div className='header-brand-prog-left'></div>
           <div className='header-brand-prog-right'></div>
@@ -33,8 +33,8 @@ const Coin: FC<HeaderBrandData> = ({
         <div className='btn-box'>
           <div className='header-brand-btn'></div>
         </div>
-        <div className={'header-brand'}>
-          <div className='card'>
+        <div className={'coin-wrapper'}>
+          <div className='coin'>
             <img src={frontImg} alt={'header-brand'} className='img-front'></img>
             <img src={backImg ?? frontImg} alt={'header-brand'} className='img-back'></img>
           </div>
