@@ -4,7 +4,7 @@ $cardWidth: 250px;
 
 @keyframes lights-on {
     0% {opacity: 0}
-    100% {opacity: 1}
+    100% {opacity: .9}
 }
 
 #overlay {
@@ -15,7 +15,19 @@ $cardWidth: 250px;
     right: 0;
     bottom: 0;
     z-index: 10;
-    background-color: rgb(169 169 169 / 50%);
+    opacity: .9;
+    filter: grayscale(1);
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(to right bottom, rgb(46, 46, 46), rgb(0 0 0));
+        opacity: .9;
+    }
 
     &.active-true {
         display: block;

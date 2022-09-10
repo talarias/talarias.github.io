@@ -15,12 +15,14 @@ const Projects: FC<ProjectsData> = ({
           <Card
             title={'testTitle'}
             subTitle={'subTitle'}
+            overlay={true}
           />
         </Col>
         <Col xs={12} md={6} xl={4}>
           <Card
             title={'testTitle'}
             subTitle={'subTitle'}
+            overlay={true}
             windowFx={true}
           />
         </Col>
@@ -28,7 +30,6 @@ const Projects: FC<ProjectsData> = ({
           <Card
             title={'testTitle'}
             subTitle={'subTitle'}
-            overlay={false}
           />
         </Col>
       </Row>

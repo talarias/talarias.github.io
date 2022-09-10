@@ -8,7 +8,7 @@ const Card: FC<CardData> = ({
   subTitle = undefined,
   backgroundData = 'url(/homeBg.jpeg)',
   windowFx = false,
-  overlay = true
+  overlay = false
 }) => {
   const [active, setActive] = useState(false)
   const [cardStyle, setCardStyle] = useState({ background: backgroundData as String + ' 50% 50%' } as any)
@@ -108,7 +108,7 @@ const Card: FC<CardData> = ({
           </div>
         </div>
         {
-          overlay ? <div id="overlay" className={'active-' + active}></div> : undefined
+          overlay ? <div id="overlay" className={'active-' + active} style={{ background: backgroundData }}></div> : undefined
         }
     </>
   )
