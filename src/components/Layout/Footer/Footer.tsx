@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
+import PageRow from '../PageRow/PageRow'
+import { FooterData } from './types'
 
 import './footer.scss'
-import PageRow from '../Layout/PageRow/PageRow'
-import { FooterData } from '../Layout/Footer/types'
 
 const Footer: FC<FooterData> = ({
   children = undefined

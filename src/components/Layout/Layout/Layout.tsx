@@ -5,7 +5,7 @@ import { LayoutData } from '../../Navigation/types'
 
 import { SiteSettings } from '../../../SiteSettings'
 import { LayoutSettings } from '../../../LayoutSettings'
-import Footer from '../../Footer/Footer'
+import Footer from '../Footer/Footer'
 
 import './globals.scss'
 import './layout.scss'
