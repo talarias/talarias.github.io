@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react'
 import { Button, Col, Row } from 'react-bootstrap'
 import { SortNumericDown, SortNumericUp } from 'react-bootstrap-icons'
 import { SkillsData } from './types'
+// import { Keyframe, Easing } from 'react-native-reanimated'
 
 import './skills.scss'
 
@@ -10,6 +11,18 @@ const Skills: FC<SkillsData> = ({
   items = []
 }) => {
   const [sortdeSkillItems, setSortdeSkillItems] = useState(items)
+
+  // const keyframe = new Keyframe({
+  //   0: {
+  //     transform: [{ rotate: '0deg' }]
+  //   },
+  //   45: {
+  //     transform: [{ rotate: '100deg' }],
+  //   },
+  //   100: {
+  //     transform: [{ rotate: '45deg' }]
+  //   }
+  // })
 
   const sortDescending = () => {
     setSortdeSkillItems([...sortdeSkillItems].sort((a, b) => a.percent < b.percent ? 1 : -1))
@@ -41,7 +54,7 @@ const Skills: FC<SkillsData> = ({
         <div className='skill-item'>
           <h5>{skill.title}</h5>
           <div className='skill-item-percent-wapper'>
-            <div className='skill-item-percent' style={{ width: skill.percent + '%' }}></div>
+            <div className='skill-item-percent' style={{ width: skill.percent + '%', animationName: skill.title }}></div>
           </div>
         </div>
       </Col>
