@@ -1,15 +1,23 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { ButtonCloseData } from './types'
 
 import './buttonClose.scss'
+import { Spinner } from 'react-bootstrap'
 
 const ButtonClose: FC<ButtonCloseData> = ({
-  onClick = () => {}
+  onClick = () => {},
+  spinning = false
 }) => {
+  const [clicked, setClicked] = useState(spinning)
+
+  const isClicked = () => { setClicked(!clicked) }
+
   return (
     <>
-      <div className={'close-btn action'} onClick={onClick()}>
-        <span></span>
+      <div className={'close-btn action clicked-' + clicked} onClick={() => { isClicked(); onClick() }}>
+        {
+          !clicked ? <span></span> : <Spinner animation="border" />
+        }
       </div>
     </>
   )

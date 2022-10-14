@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
+import ButtonClose from '../ButtonClose/ButtonClose'
 
 import './login.scss'
 
@@ -19,8 +20,9 @@ function Login () {
     </div>
 
       <Modal show={show} onHide={handleClose} centered>
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title><span><FeedPersonIcon size={30} /></span>Sign in</Modal.Title>
+          <ButtonClose onClick={handleClose}/>
         </Modal.Header>
         <Modal.Body>
           <Form>

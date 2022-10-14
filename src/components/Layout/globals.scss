@@ -1,4 +1,7 @@
-// button, button.btn {
-//     color: #284a7e;
-//     border-color: #284a7e;
-// }
+button, button.btn {
+    border-radius: 0;
+}
+
+input {
+    border-radius: 0 !important;
+}
