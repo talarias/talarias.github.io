@@ -1,0 +1,41 @@
+.sign-in-btn {
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.modal-content {
+    background: transparent;
+
+    .modal-header {
+        border: none;
+        border-radius: 0;
+        background: #284a7e;
+
+        .modal-title {
+            color: white;
+
+            span {
+                margin-right: 14px;
+            }
+        }
+    }
+    .modal-body {
+        background: rgb(32, 35, 36);
+
+        .form-label {
+            color: white;
+        }
+        input {
+            border: none;
+        }
+    }
+    .modal-footer {
+        border-color: #284a7e;
+        border-radius: 0;
+        background: rgb(32, 35, 36);
+
+        button {
+            color: white !important;
+        }
+    }
+}

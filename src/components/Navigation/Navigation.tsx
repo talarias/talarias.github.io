@@ -10,6 +10,7 @@ import Menu from './Menu'
 
 import './styles/navigation.scss'
 import { NavigationData } from './types'
+import Login from '../Login/Login'
 
 const options = {
   name: 'Disable backdrop',
@@ -46,8 +47,16 @@ const Navigation: FC<NavigationData> = ({
       </Navbar>
 
       <Offcanvas show={showNavigation} onHide={toggleShow} {...options}>
-        <Offcanvas.Header closeButton={true}>
+        <Offcanvas.Header closeButton={false}>
           <Offcanvas.Title>Menu</Offcanvas.Title>
+          <div className='actions'>
+            <div className={'action'}>
+              <Login />
+            </div>
+            <div className={'close-btn action'} onClick={toggleShow}>
+              <span></span>
+            </div>
+          </div>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Menu

@@ -7,7 +7,7 @@ import { SiteSettings } from '../../../SiteSettings'
 import { LayoutSettings } from '../../../LayoutSettings'
 import Footer from '../Footer/Footer'
 
-import './globals.scss'
+import '../globals.scss'
 import './layout.scss'
 
 const Layout: FC<LayoutData> = () => {
