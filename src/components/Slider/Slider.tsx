@@ -5,13 +5,14 @@ import { SliderData } from './types'
 import './slider.scss'
 import PageRow from '../PageRow/PageRow'
 import Section from '../Section/Section'
-import { ChevronLeftIcon, ChevronRightIcon } from '@primer/octicons-react'
+import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from '@primer/octicons-react'
 import { Col, Row } from 'react-bootstrap'
 
 const Slider: FC<SliderData> = ({
   items = [],
   topics = [],
-  interval = 15000
+  interval = 15000,
+  carouselMaxHeight
 }) => {
   const [active, setActive] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -40,8 +41,8 @@ const Slider: FC<SliderData> = ({
 
   const genTopicElement = (topic: any, key: number, index: number, active: Boolean = false) => {
     return (
-      <Col key={key} xs={6} md={2} onClick={() => setCurrentIndex(index)}>
-        <h4 className={'active-' + active}>{topic}</h4>
+      <Col key={key} xs={12} md={2} onClick={() => setCurrentIndex(index)} className='topic-wr'>
+        <h4 className={'topic active-' + active}>{topic}</h4>
       </Col>
     )
   }
@@ -115,7 +116,7 @@ const Slider: FC<SliderData> = ({
           </div>
           <div className='slider'>
             <Carousel
-              style={{ minHeight: '300px' }}
+              style={{ minHeight: '300px', maxHeight: carouselMaxHeight }}
               onSlide={toggle}
               onSlid={toggle}
               activeIndex={currentIndex}
@@ -130,20 +131,25 @@ const Slider: FC<SliderData> = ({
                 )
               })}
             </Carousel>
+            <p className='show-more-act' title='Expand Content'>
+              <ChevronDownIcon size={34} />
+            </p>
           </div>
           <div className='index-wrapper active-'>
             {genIndexes()}
           </div>
           <div className='slider-topics'>
             <Section simpleContent = {false}>
-              <Row className="justify-content-md-center">
-                <Col xs={6} md={1} className='topics-prev'>
+              <Row className="justify-content-md-center topics">
+                {getCurrentTopics()}
+              </Row>
+              <Row className="justify-content-between">
+                <Col xs={1} className='topics-prev'>
                   <a onClick={() => slide(-1)}>
                     <ChevronLeftIcon size={34} />
                   </a>
                 </Col>
-                {getCurrentTopics()}
-                <Col xs={6} md={1} className='topics-next'>
+                <Col xs={1} className='topics-next'>
                   <a onClick={() => slide(1) }>
                     <ChevronRightIcon size={34} />
                   </a>

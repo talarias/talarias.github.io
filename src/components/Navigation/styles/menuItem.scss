@@ -1,10 +1,5 @@
 .menu-item {
-    margin-bottom: 7px;
-    border-bottom: 1px solid #284a7e;
-
-    &:hover {
-        border-bottom: 1px solid #0a58ca;
-    }
+    margin-bottom: 14px;
 
     a {
         display: flex;
@@ -24,6 +19,23 @@
         }
         span.nav-menu-title {
             font-size: 1.5rem;
+        }
+
+        &:hover {
+            color: white;
+        }
+    }
+    .nav-underline {
+        height: 5px;
+        width: 6rem;
+        background: #284a7e;
+
+        transition: width .4s ease-in-out;
+    }
+
+    &:hover {
+        .nav-underline {
+            width: 100%;
         }
     }
 }

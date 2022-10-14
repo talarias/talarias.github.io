@@ -1,13 +1,15 @@
 .slider-topics {
+    min-height: 60px;
     padding-bottom: 21px;
 
     .topics-prev, .topics-next {
+        position: relative;
+        top: -45px;
+
         color: #fff;
         opacity: .5;
         cursor: pointer;
-        display: flex;
         flex-wrap: nowrap;
-        justify-content: center;
         transition: opacity .15s ease;
 
         &:hover {
@@ -17,25 +19,44 @@
             opacity: .9;
         }
     }
-
-    h4 {
-        display: inline-block;
-        margin-right: 35px;
-        opacity: 1;
-        text-align: center;
-        width: 100%;
-        cursor: pointer;
-
-        transition: opacity .6s ease;
-
-        &.active-false {
-            opacity: 0.5;
+    @media (max-width: 767.98px) {
+        .topics-next {
+            right: 0;
         }
-        &:hover {
-            color: #fff;
-            text-decoration: none;
-            outline: 0;
-            opacity: .9;
+    }
+
+    .topics {
+        display: flex;
+        justify-content: center;
+
+        .topic-wr {
+            display: flex;
+            justify-content: center;
+        }
+
+        .topic {
+            display: inline-block;
+            margin: auto;
+            opacity: 1;
+            text-align: center;
+            cursor: pointer;
+    
+            transition: opacity .6s ease;
+    
+            &.active-false {
+                opacity: 0.5;
+            }
+            &:hover {
+                color: #fff;
+                text-decoration: none;
+                outline: 0;
+                opacity: .9;
+            }
+        }
+        @media (max-width: 540px) {
+            .topic {
+                display: none;
+            }
         }
     }
 }
@@ -46,8 +67,7 @@
     .container {
         position: absolute;
         min-height: 300px;
-        top: 0;
-        bottom: 0;
+        top: 50px;
         z-index: 1;
         display: flex;
         align-items: center;
@@ -58,7 +78,7 @@
         text-align: center;
         background: 0 0;
         border: 0;
-        opacity: .20;
+        opacity: .10;
         cursor: pointer;
         transition: opacity .15s ease;
 
@@ -72,7 +92,6 @@
 }
 
 .slider-next {
-
     .container {
         right: 0;
     }
@@ -80,6 +99,28 @@
 
 .slider {
     padding-top: 21px;
+    overflow: hidden;
+
+    .show-more-act {
+        position: relative;
+        margin: 0;
+        padding: 28px 14px 14px;
+        z-index: 2;
+
+        text-align: end;
+        color: white;
+        background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgb(32, 35, 36));
+
+        svg {
+            cursor: pointer;
+            transition: opacity .15s ease;
+            opacity: .5;
+
+            &:hover {
+                opacity: .9;
+            }
+        }
+    }
 }
 
 .index-wrapper {

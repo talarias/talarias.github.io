@@ -23,6 +23,7 @@ const MenuItem: FC<MenuItemData> = ({
               <span className='nav-menu-title'>{title}</span>
               {logo ? <img src={logo} alt={logoAlt}></img> : null}
         </Link>
+        <div className='nav-underline'></div>
       </div>
     </>
   )
