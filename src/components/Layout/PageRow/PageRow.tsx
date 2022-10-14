@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { PageRowData } from '../PageParallax/types'
+import { PageRowData } from './types'
 
 import './pageRow.scss'
 

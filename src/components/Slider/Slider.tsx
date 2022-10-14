@@ -3,8 +3,8 @@ import Carousel from 'react-bootstrap/Carousel'
 import { SliderData } from './types'
 
 import './slider.scss'
-import PageRow from '../PageRow/PageRow'
-import Section from '../Section/Section'
+import PageRow from '../Layout/PageRow/PageRow'
+import Section from '../Layout/Section/Section'
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon } from '@primer/octicons-react'
 import { Col, Row } from 'react-bootstrap'
 

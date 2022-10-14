@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import PageRow from '../PageRow/PageRow'
+import PageRow from '../Layout/PageRow/PageRow'
 import { FooterData } from './types'
 
 import './footer.scss'

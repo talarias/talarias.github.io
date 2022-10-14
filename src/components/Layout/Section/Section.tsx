@@ -6,6 +6,7 @@ import './section.scss'
 
 const Section: FC<SectionData> = ({
   titleAction = null,
+  borderFillPercent = 100,
   title,
   simpleContent,
   children
@@ -22,7 +23,9 @@ const Section: FC<SectionData> = ({
                         <div className='section-item-title'>
                             <div>
                               <h2>{title}</h2>
-                              <div className='section-item-title-br'></div>
+                              <div className='title-con'>
+                                <div className='section-item-title-br' style={{ width: `${borderFillPercent}%` }}></div>
+                              </div>
                             </div>
                             <div className='title-action'>
                               {titleAction}

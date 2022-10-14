@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 import { Outlet } from 'react-router-dom'
-import Navigation from '../Navigation/Navigation'
-import { LayoutData } from '../Navigation/types'
+import Navigation from '../../Navigation/Navigation'
+import { LayoutData } from '../../Navigation/types'
 
-import { SiteSettings } from '../../SiteSettings'
-import { LayoutSettings } from '../../LayoutSettings'
-import Footer from '../Footer/Footer'
+import { SiteSettings } from '../../../SiteSettings'
+import { LayoutSettings } from '../../../LayoutSettings'
+import Footer from '../../Footer/Footer'
 
 import './globals.scss'
 import './layout.scss'

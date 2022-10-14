@@ -9,9 +9,13 @@
             display: flex;
         }
     }
-    .section-item-title-br {
+    .title-con {
         width: 6rem;
-        height: 4px;
-        background: #284a7e;        
-    }
+
+        .section-item-title-br {
+            width: 100%;
+            height: 4px;
+            background: #284a7e;        
+        }
+    }    
 }
