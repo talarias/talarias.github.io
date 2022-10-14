@@ -5,17 +5,20 @@ import { SliderData } from './types'
 import './slider.scss'
 import PageRow from '../PageRow/PageRow'
 import Section from '../Section/Section'
-import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from '@primer/octicons-react'
+import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon } from '@primer/octicons-react'
 import { Col, Row } from 'react-bootstrap'
 
 const Slider: FC<SliderData> = ({
   items = [],
   topics = [],
   interval = 15000,
-  carouselMaxHeight = 500
+  carouselMaxHeight = 300
 }) => {
   const [active, setActive] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isContentExpanded, setIsContentExpanded] = useState(false)
+
+  // const expandContent = () => { setIsContentExpanded(!isContentExpanded) }
 
   if (interval) {
     useEffect(() => {
@@ -94,6 +97,16 @@ const Slider: FC<SliderData> = ({
     return myList
   }
 
+  const getCarouselStyle = () => {
+    const styleData = {
+      minHeight: carouselMaxHeight,
+      maxHeight: undefined as any
+    }
+    if (!isContentExpanded) styleData.maxHeight = carouselMaxHeight
+
+    return styleData
+  }
+
   return (
     <>
       <PageRow
@@ -116,7 +129,7 @@ const Slider: FC<SliderData> = ({
           </div>
           <div className='slider'>
               <Carousel
-              style={{ minHeight: '300px', maxHeight: carouselMaxHeight }}
+                style={getCarouselStyle()}
                 onSlide={toggle}
                 onSlid={toggle}
                 activeIndex={currentIndex}
@@ -131,8 +144,12 @@ const Slider: FC<SliderData> = ({
                   )
                 })}
               </Carousel>
-            <p className='show-more-act' title='Expand Content'>
-              <ChevronDownIcon size={34} />
+            <p className='show-more-act' title='Expand Content'
+              onClick={() => { setIsContentExpanded(!isContentExpanded) }}
+            >
+              {
+                isContentExpanded ? <ChevronUpIcon size={34} /> : <ChevronDownIcon size={34} />
+              }
             </p>
           </div>
           <div className='index-wrapper active-'>
