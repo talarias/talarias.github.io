@@ -12,7 +12,7 @@ const Slider: FC<SliderData> = ({
   items = [],
   topics = [],
   interval = 15000,
-  carouselMaxHeight
+  carouselMaxHeight = 500
 }) => {
   const [active, setActive] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -115,22 +115,22 @@ const Slider: FC<SliderData> = ({
             </Section>
           </div>
           <div className='slider'>
-            <Carousel
+              <Carousel
               style={{ minHeight: '300px', maxHeight: carouselMaxHeight }}
-              onSlide={toggle}
-              onSlid={toggle}
-              activeIndex={currentIndex}
-              controls={false}
-              indicators={false}
-              >
-              {items.map((item: any, index: number) => {
-                return (
-                  <Carousel.Item key={index}>
-                    {item}
-                  </Carousel.Item>
-                )
-              })}
-            </Carousel>
+                onSlide={toggle}
+                onSlid={toggle}
+                activeIndex={currentIndex}
+                controls={false}
+                indicators={false}
+                >
+                {items.map((item: any, index: number) => {
+                  return (
+                    <Carousel.Item key={index}>
+                      {item}
+                    </Carousel.Item>
+                  )
+                })}
+              </Carousel>
             <p className='show-more-act' title='Expand Content'>
               <ChevronDownIcon size={34} />
             </p>

@@ -102,7 +102,6 @@ function Home () {
         <Slider
           items = {items}
           topics = {['About me', 'Test', 'Skills test', 'Test 2']}
-          carouselMaxHeight = {300}
         />
         <PageRow variant = 'dark' >
           <Section
