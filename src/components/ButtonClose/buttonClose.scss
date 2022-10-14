@@ -1,0 +1,26 @@
+.close-btn {
+    width: 30px;
+    height: 30px;
+
+    display: inline-block;
+
+    cursor: pointer;
+
+    span, span::after {
+        width: 30px;
+        height: 4px;
+        top: 12px;
+        left: 1px;
+        position: relative;
+
+        display: block;
+        content: "";
+        transform: rotate(45deg);
+        background: white;      
+                  
+    }
+    span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+}

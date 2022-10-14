@@ -40,51 +40,12 @@
 
         .action {
             margin: 0 7px;
+
             border-radius: 100%;
-        }
-        .sign-in-btn {
-            width: 30px !important;
-            height: 30px;
-            display: inline-block;
+            transition: all 0.4s;
 
             &:hover {
-                box-shadow: rgb(42 46 47) 7px 7px 4px;
-            }
-        }
-        .close-btn {
-            width: 30px;
-            height: 30px;
-
-            display: inline-block;
-
-            cursor: pointer;
-
-            span, span::after {
-                width: 30px;
-                height: 4px;
-                top: 12px;
-                left: 1px;
-                position: relative;
-
-                display: block;
-                content: "";
-                transform: rotate(45deg);
-                background: white;      
-                          
-            }
-            span::after {
-                top: 0;
-                transform: rotate(90deg);
-            }
-
-            &:hover {
-                span {
-                    box-shadow: rgb(24 26 27) 7px 0px 4px;
-
-                    &::after {
-                        box-shadow: rgb(42 46 47) 0 -9px 4px;
-                    }
-                }
+                transform: scale(1.2);
             }
         }
     }
