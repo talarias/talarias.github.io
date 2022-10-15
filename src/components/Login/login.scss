@@ -22,6 +22,11 @@
     .modal-body {
         background: rgb(32, 35, 36);
 
+        .error-messege {
+            color: #c43c49;
+            font-style: italic;
+        }
+
         .form-label {
             color: white;
         }
@@ -34,8 +39,9 @@
         border-radius: 0;
         background: rgb(32, 35, 36);
 
-        button {
-            color: white !important;
+        button.formAction {
+            min-width: 80px;
+            color: white;
         }
     }
 }
